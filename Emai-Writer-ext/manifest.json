@@ -1,0 +1,33 @@
+{
+    "name": "Email Writer Assistant",
+    "description": "AI powered email reply generator",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "activetab",
+        "sidepannel"
+    ],
+    "host_permissions": [
+        "http://localhost:8080/",
+        "*://mail.google.com/*",
+        "*://outlook.office.com/*"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "*://mail.google.com/*",
+                "*://outlook.office.com/*"
+            ],
+            "css": [
+                "content.css"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "action": {
+        "default_title": "Email Writer Assistant"
+    }
+}
